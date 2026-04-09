@@ -8,9 +8,10 @@ st.title("🐠 Fish Species Identifier")
 
 # 1. Load the TFLite model
 @st.cache_resource
+# NEW FIXED VERSION
 def load_tflite_model():
-    # Make sure this filename matches exactly what you uploaded!
-    interpreter = tf.lite.Interpreter(model_path="fish_model.tflite")
+    # Use 'tflite' instead of 'tf.lite'
+    interpreter = tflite.Interpreter(model_path="fish_model.tflite") 
     interpreter.allocate_tensors()
     return interpreter
 
