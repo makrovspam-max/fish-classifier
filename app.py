@@ -77,9 +77,9 @@ if uploaded_file is not None and interpreter is not None:
         prediction_index = np.argmax(output_data)
         confidence = np.max(output_data)
 
-        # --- UPDATE YOUR LABELS HERE ---
-        # Put your species names in the correct order!
-        labels = ["Species A", "Species B", "Species C"] 
+       # --- UPDATE YOUR LABELS HERE ---
+        # Put your species names in the exact order they were trained!
+        labels = ["Anglefish", "guppy", "platy"] 
         
         if prediction_index < len(labels):
             st.success(f"Prediction: **{labels[prediction_index]}**")
@@ -93,7 +93,3 @@ if uploaded_file is not None and interpreter is not None:
 
 elif interpreter is None:
     st.warning("⚠️ App is waiting for a valid 8.5MB .tflite file to be uploaded to GitHub.")
-        st.info(f"Class ID: {prediction} (Add more names to your 'labels' list!)")
-
-elif interpreter is None:
-    st.warning("Waiting for a valid model file to be uploaded to GitHub...")
