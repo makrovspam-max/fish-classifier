@@ -1,3 +1,4 @@
+tflite-runtime
 streamlit
 pillow
 numpy
